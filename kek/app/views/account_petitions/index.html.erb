@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Account Petitions</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @account_petitions.each do |account_petition| %>
+      <tr>
+        <td><%= account_petition.title %></td>
+        <td><%= account_petition.description %></td>
+        <td><%= link_to 'Show', account_petition %></td>
+        <td><%= link_to 'Edit', edit_account_petition_path(account_petition) %></td>
+        <td><%= link_to 'Destroy', account_petition, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Account petition', new_account_petition_path %>

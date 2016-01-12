@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Foro</title>
+	<style type="text/css">
+		body { background-color: #FFF !important;}
+		/* Remove the navbar's default margin-bottom and rounded borders */ 
+    	.navbar {
+    	  margin-bottom: 0;
+    	  border-radius: 0;
+    	}
+    	
+    	/* Set height of the grid so .sidenav can be 100% (	adjust as needed) */
+    	.row.content {height: 450px}
+    
+   		/* Set gray background color and 100% height */
+    	.sidenav {
+    	  padding-top: 20px;
+    	  background-color: transparent;
+    	  height: 100%;
+    	}
+    	
+    	/* Set black background color, white text and some padding */
+    	footer {
+    	  background-color: #555;
+    	  color: white;
+    	  padding: 15px;
+    	}
+    
+    	/* On small screens, set height to 'auto' for sidenav and grid */
+    	@media screen and (max-width: 767px) {
+    	  .sidenav {
+    	    height: auto;
+    	    padding: 15px;
+    	  }
+    	  .row.content {height:auto;} 
+    	}
+    	.person	{
+    		border: 10px solid transparent;
+    		width: 65%;
+    		height: 65%;
+    	}
+    	.person:hover {
+    		border-collapse: #f1f1f1;
+    	}
+    	.jumbotron {
+    		background-color: transparent;
+    	}
+    	.fotoNoticia {
+    		text-align: right;
+    		height: auto;
+    		width: auto;
+    		max-height: 240px;
+    		max-width: 320px;
+    	}
+      .btn-info {
+        background: black !important;
+        border: black !important;
+        opacity: 0.85;
+      }
+      .btn-info:hover, .btn-info:focus, .btn-info:active, .btn-info.active, .open > .dropdown-toggle.btn-info {
+    background: black;
+}
+.btn-info:active, .btn-info.active {
+    background: black;
+    box-shadow: none;
+}
+	</style>
+</head>
+<body>
+<div class="jumbotron">
+	<div class="row text-center">
+		<div class ="col-sm-4 text-right">
+			<%=image_tag('logo.jpg', :class => 'img-circle person')%>
+		</div>
+		<div class="col-sm-8 text-left">
+			<h1>Archivo de Música</h1>
+			<p> de la Biblioteca Nacional.</p>
+		</div>
+	</div>	
+</div>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Exposición</a></li>
+        <li class="active"><a href="#">Foro</a></li>
+        <li><a href="/contacto">Contacto</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+
+        <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
+        <% else %>
+        <li><%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> | </li>
+        <li><%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %> </li>
+      <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  	<div class="row">
+    	<div class="col-sm-2 sidenav">
+    	  
+    	</div>
+    	<div class="col-sm-8 text-left"> 
+    	  	<h1><strong>Foro</strong></h1>
+    	</div>
+    	<div class="col-sm-2 sidenav">
+    		<a href="#" class="btn btn-info btn-block" role="button">Facebook</a>  <!--Agregar URL -->
+        <br>   	
+        <a href="#" class="btn btn-info btn-block" role="button">Twitter</a>   <!-- Agregar URL -->
+    	</div>
+  	</div>
+  	<div class="row">
+  	  	<div class="col-sm-2 sidenav">
+  	  	</div>
+  	  	<div class="col-sm-8 text-left"> 
+  	  	  <h2>Temas</h2>
+          <br>
+          <strong><hr></strong>
+  	  	</div>
+  	  	<div class="col-sm-2 sidenav">
+    	</div>
+  	</div>
+  	<div class="row">
+  		<div class="col-sm-2 sidenav">
+    	</div>
+  		<div class="col-sm-8 text-left">
+  			<h5>fecha</h5>
+  			<h3>Titulo</h3>
+  			<h4>Autor</h4>
+  			<div class="pull-right">
+  				<a href="link noticia">Ver más</a>
+  			</div>
+  		</div>
+  		<hr>
+   	</div>
+   	<br>
+  	<hr>
+   	<div class="row">
+  		<div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+        <h5>fecha</h5>
+        <h3>Titulo</h3>
+        <h4>Autor</h4>
+        <div class="pull-right">
+          <a href="link noticia">Ver más</a>
+        </div>
+      </div>
+   		<hr>
+   	</div>
+   	<br>
+  	<hr>
+   	<div class="row">
+  		<div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+        <h5>fecha</h5>
+        <h3>Titulo</h3>
+        <h4>Autor</h4>
+        <div class="pull-right">
+          <a href="link noticia">Ver más</a>
+        </div>
+      </div>
+  		<hr>
+   	</div>
+   	<br>
+  	<hr>
+   	<div class="row">
+  		<div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+        <h5>fecha</h5>
+        <h3>Titulo</h3>
+        <h4>Autor</h4>
+        <div class="pull-right">
+          <a href="link noticia">Ver más</a>
+        </div>
+      </div>
+   	<br>
+  	<hr>
+   	<div class="row">
+  		<div class="col-sm-2 sidenav">
+    	</div>
+    	<div class="col-sm-8 text-left">
+        <h5>fecha</h5>
+        <h3>Titulo</h3>
+        <h4>Autor</h4>
+        <div class="pull-right">
+          <a href="link noticia">Ver más</a>
+        </div>
+      </div>
+  		<hr>
+   	</div>
+   	<br>
+  	<hr>
+</div>
+
+
+
+<footer class="container-fluid text-center">
+  <p>Footer Text</p>
+</footer>
+
+<body>
+</html>

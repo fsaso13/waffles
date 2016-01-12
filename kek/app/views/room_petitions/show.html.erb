@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>User:</strong>
+  <%= @room_petition.user_id %>
+</p>
+
+<p>
+  <strong>Room:</strong>
+  <%= @room_petition.room_id %>
+</p>
+
+<p>
+  <strong>Occupied:</strong>
+  <%= @room_petition.occupied %>
+</p>
+
+<%= link_to 'Edit', edit_room_petition_path(@room_petition) %> |
+<%= link_to 'Back', room_petitions_path %>

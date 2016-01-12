@@ -1,9 +1,26 @@
 Rails.application.routes.draw do
-  resources :contents
+  resources :repports
+  resources :room_petitions
+  resources :rooms
+  resources :invitations
+  resources :activities
+  resources :account_petitions
+  resources :suggestions
+  resources :donations
+  resources :comments
+  resources :topics
   devise_for :users
+  resources :contents
+  
   resources :sections
-  get 'welcome/index'
 
+
+
+  get 'welcome/index'
+  get 'contacto' => 'welcome#contacto'
+
+  get 'welcome/foro'
+  get 'foro' => 'welcome#foro'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

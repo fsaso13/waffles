@@ -1,0 +1,37 @@
+<%= form_for(@repport) do |f| %>
+  <% if @repport.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@repport.errors.count, "error") %> prohibited this repport from being saved:</h2>
+
+      <ul>
+      <% @repport.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :date %><br>
+    <%= f.date_select :date %>
+  </div>
+  <div class="field">
+    <%= f.label :preview %><br>
+    <%= f.text_area :preview %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div>
+      <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control'%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

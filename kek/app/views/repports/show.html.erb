@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @repport.title %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @repport.date %>
+</p>
+
+<p>
+  <strong>Preview:</strong>
+  <%= @repport.preview %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @repport.description %>
+</p>
+
+<%= link_to 'Edit', edit_repport_path(@repport) %> |
+<%= link_to 'Back', repports_path %>

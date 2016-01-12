@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 	<meta charset="utf-8">
@@ -80,20 +81,19 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contact</a></li>
+        <li class="active"><a href="#">Inicio</a></li>
+        <li><a href="">Exposicion</a></li>
+        <li><a href="/foro">Foro</a></li>
+        <li><a href="/contacto">Contacto</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
 
       <% if user_signed_in? %>
-        Logged in as <strong><%= current_user.email %></strong>.
-        <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-        <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+
+        <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %> </li>
       <% else %>
-        <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-        <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+        <li><%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> | </li>
+        <li><%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %> </li>
       <% end %>
 
 
@@ -107,11 +107,16 @@
 <div class="container-fluid text-center">    
   	<div class="row">
     	<div class="col-sm-2 sidenav">
-    	  <p><a href="#">Link</a></p>
-    	  <p><a href="#">Link</a></p>
-    	  <p><a href="#">Link</a></p>
+    	  <p><a href='sections/1'>Chilenos de Exportación</p> 
+    	  <p><a href="sections/2">El arte de la partitura</a></p>
+    	  <p><a href="sections/3">Hitos en el pentagrama</a></p>
+        <p><a href="sections/4">Linea de tiempo de hitos musicales</a></p>
+        <p><a href="sections/5">Música y letras</a></p>
+        <p><a href="sections/6">Sonidos sobre las tablas</a></p>
     	</div>
+
     	<div class="col-sm-8 text-left"> 
+
     	  	<h1>Bienvenidos</h1>
     	  	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim 	veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
       		<hr>
@@ -134,106 +139,32 @@
   	  	<div class="col-sm-2 sidenav">
     	</div>
   	</div>
+    <% @reports.each do |report|%>
+
   	<div class="row">
   		<div class="col-sm-2 sidenav">
     	</div>
     	<div class="col-sm-3 text-right">
-    	
-  				<%=image_tag('293.jpg', :class => 'img-responsive fotoNoticia')%>
+  				<%=image_tag( '293.png', :class => 'img-responsive fotoNoticia')%>
   		</div>
   		<div class="col-sm-4 text-left">
-  			<h5>fecha</h5>
-  			<h3>Titular</h3>
-  			<h4>Resumen...</h4>
+  			<h5><%= report.date %></h5>
+  			<h3><%= report.title %></h3>
+  			<h4><%=report.preview %></h4>
   			<div class="pull-right">
   				<a href="link noticia">Ver más</a>
   			</div>
   		</div>
   		<hr>
    	</div>
-   	<br>
-  	<hr>
-   	<div class="row">
-  		<div class="col-sm-2 sidenav">
-    	</div>
-    	<div class="col-sm-3 text-right">
-    	
-  				<%=image_tag('293.jpg', :class => 'img-responsive fotoNoticia')%>
-  		</div>
-  		<div class="col-sm-4 text-left">
-  			<h5>fecha</h5>
-  			<h3>Titular</h3>
-  			<h4>Resumen...</h4>
-  			<div class="pull-right">
-  				<a href="link noticia">Ver más</a>
-  			</div>
-  		</div>
-   		<hr>
-   	</div>
-   	<br>
-  	<hr>
-   	<div class="row">
-  		<div class="col-sm-2 sidenav">
-    	</div>
-    	<div class="col-sm-3 text-right">
-    	
-  				<%=image_tag('293.jpg', :class => 'img-responsive fotoNoticia')%>
-  		</div>
-  		<div class="col-sm-4 text-left">
-  			<h5>fecha</h5>
-  			<h3>Titular</h3>
-  			<h4>Resumen...</h4>
-  			<div class="pull-right">
-  				<a href="link noticia">Ver más</a>
-  			</div>
-  		</div>
-  		<hr>
-   	</div>
-   	<br>
-  	<hr>
-   	<div class="row">
-  		<div class="col-sm-2 sidenav">
-    	</div>
-    	<div class="col-sm-3 text-right">
-    	
-  				<%=image_tag('293.jpg', :class => 'img-responsive fotoNoticia')%>
-  		</div>
-  		<div class="col-sm-4 text-left">
-  			<h5>fecha</h5>
-  			<h3>Titular</h3>
-  			<h4>Resumen...</h4>
-  			<div class="pull-right">
-  				<a href="link noticia">Ver más</a>
-  			</div>
-  		</div>
-   	</div>
-   	<br>
-  	<hr>
-   	<div class="row">
-  		<div class="col-sm-2 sidenav">
-    	</div>
-    	<div class="col-sm-3 text-right">
-    	
-  				<%=image_tag('293.jpg', :class => 'img-responsive fotoNoticia')%>
-  		</div>
-  		<div class="col-sm-4 text-left">
-  			<h5>fecha</h5>
-  			<h3>Titular</h3>
-  			<h4>Resumen...</h4>
-  			<div class="pull-right">
-  				<a href="link noticia">Ver más</a>
-  			</div>
-  		</div>
-  		<hr>
-   	</div>
-   	<br>
-  	<hr>
+    <hr>
+    <% end %>
 </div>
 
 
 
 <footer class="container-fluid text-center">
-  <p>Footer Text</p>
+  <p>---</p>
 </footer>
 
 <body>
